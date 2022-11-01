@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+
+                            <!--Header-->
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/Group 1.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html"><li>HOME</li></a>
+                <a href="#"><li>SOBRE MIM</li></a>
+                <a href="#"><li>PROJETO</li></a>
+                <a href="#"><li>ORIGENS</li></a>
+                <a href="#"><li class="bnt-nav c">CADASTRO</li></a>
+                <a href="login.html"><li class="bnt-nav">LOGIN</li></a>
+            </ul>
+        </nav>
+    </header>
+
+                            <!--Tela do cadastro-->
+        <div class="banner">
+            <div class="container1">
+                <div class="caixa-formulario">
+                    <h1>Seja bem-vindo!!</h1>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="in_email" placeholder="email@gmail.com">
+                    </div>
+                    
+                    <div class="campo">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="in_senha" placeholder="**********">
+                    </div>
+                    <div id="div_exibir"></div>
+                    <button onclick="login()">LOGIN</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Footer-->
+        <div class="footer">
+            <ul>
+                <li><b><a href="endereco.html">Endereço</a></b></li>
+                <li><b><a href="contato.html">Contato</a></b></li>
+            </ul>
+                Bright Tech - copyright 2022. Todos os direitos reservados. Desenvolvido por Bright Tech           
+        </div>
+    </body>
+    </html>
+
+    <script>
+        function login() {
+            var email= in_email.value
+            var senha= in_senha.value
+
+            if(email== 'empresa@gmail.com' && senha== 'sptech'){
+            window.location.href="dashboard.html";
+
+            } else{
+                alert(`Erro!`)
+                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
+            }
+        }
+    </script>
