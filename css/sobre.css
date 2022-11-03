@@ -2,7 +2,7 @@
 
 body {
     font-family: Poppins;
-    background-color: #C1D5AD;
+    background-color:#D5BAAD;
 }
 
 header {
@@ -56,74 +56,6 @@ ul li {
     background-color: #88c751b6;
     box-shadow: 0 0 10px #adf86c;
 }
-
-.container1 {
-    display: flex;
-    margin-top: 0px;
-    padding: 85px;
-    color: #000;
-    justify-content: space-between;
-
-
-}
-
-figure,
-figure {
-    margin-top: 50px;
-    padding: 60px;
-    width: 600px;
-    height: 100px;
-}
-
-#fig1 {
-    background-image: url('../assets/Be\ borderless\ to\ know\ the\ world..png');
-    background-repeat: no-repeat;
-}
-
-#fig1:hover {
-    background-image: url('../assets/Seja\ sem\ fronteiras\ para\ conhecer\ o\ mundo..png');
-}
-
-
-.container1 ul {
-    padding: 90px;
-    display: flex;
-    justify-content: flex-start;
-    color: #000;
-    font-family: Poppins;
-    font-size: xx-large;
-
-}
-
-.botao {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 300px;
-    width: 20px;
-}
-
-.botao button {
-    width: 100px;
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    transition: .2s ease;
-}
-
-.container1 button:hover {
-    cursor: pointer;
-    background: #7ea94d;
-}
-
-.image img {
-    margin-right: 120px;
-    border-radius: 500px;
-  box-shadow: 0 7px 10px #000;
-}
-
 
 .footer {
     height: 30px;
