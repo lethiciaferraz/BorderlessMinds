@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,8 @@
     <title>Login</title>
 </head>
 
-                            <!--Header-->
+<!--Header-->
+
 <body>
     <header>
         <div class="logo">
@@ -20,57 +22,57 @@
             <ul>
                 <a href="index.html"><li>HOME</li></a>
                 <a href="sobre.html"><li>SOBRE MIM</li></a>
-                <a href="#"><li>MURAL</li></a>
+                <a href="cartas.html"><li>CONECTAR</li></a>
                 <a href="#"><li>ORIGENS</li></a>
                 <a href="cadastro.html"><li class="bnt-nav c">CADASTRO</li></a>
-                <a href="login.html"><li class="bnt-nav">LOGIN</li></a>
+                <a href="login.html"> <li class="bnt-nav">LOGIN</li></a>
             </ul>
         </nav>
     </header>
 
-                            <!--Tela do cadastro-->
-        <div class="banner">
-            <div class="container1">
+    <!--Tela do login-->
+    <div class="banner">
+        <div class="container1">
                 <div class="caixa-formulario">
                     <h1>Seja bem-vindo!!</h1>
-
                     <div class="campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="in_email" placeholder="email@gmail.com">
-                    </div>
-                    
-                    <div class="campo">
-                        <label for="password">Senha:</label>
-                        <input type="password" id="in_senha" placeholder="**********">
-                    </div>
-                    <div id="div_exibir"></div>
-                    <button onclick="login()">LOGIN</button>
                 </div>
+
+                <div class="campo">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="in_senha" placeholder="**********">
+                </div>
+                <div id="div_exibir"></div>
+                <button onclick="login()">LOGIN</button>
             </div>
         </div>
+</div>
 
 
-        <!--Footer-->
-        <div class="footer">
-            <ul>
-                <li><b><a href="contato.html">Contato</a></b></li>
-            </ul>
-                Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido por Lethícia Ferraz.
-        </div>
-    </body>
-    </html>
+    <!--Footer-->
+    <div class="footer">
+        <ul>
+            <li><b><a href="contato.html">Contato</a></b></li>
+        </ul>
+        Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido por Lethícia Ferraz.
+    </div>
+</body>
 
-    <script>
-        function login() {
-            var email= in_email.value
-            var senha= in_senha.value
+</html>
 
-            if(email== 'empresa@gmail.com' && senha== 'sptech'){
-            window.location.href="dashboard.html";
+<script>
+    function login() {
+        var email = in_email.value
+        var senha = in_senha.value
 
-            } else{
-                alert(`Erro!`)
-                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
-            }
+        if (email == 'empresa@gmail.com' && senha == 'sptech') {
+            window.location.href = "dashboard.html";
+
+        } else {
+            alert(`Erro!`)
+            div_exibir.innerHTML = `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.`
         }
-    </script>
+    }
+</script>

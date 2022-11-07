@@ -1,27 +1,90 @@
+body {
+    font-family: Poppins;
+    background-color:#D5BAAD;
+}
+
 .container1 {
     display: flex;
     margin-top: 0px;
     padding: 85px;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: #000;
 
 
 
 }
 
+.container2 {
+    display: flex;
+    margin-top: 0px;
+    padding: 85px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+    color: #000;
 
-.caixa-formulario {
+}
+
+.caixa-sorteio {
     padding: 3rem 2rem;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: column;
     background-color: #eee9e474;
     border-radius: 50px;
     box-shadow: 3px 4px;
+    width: auto;
+    height: 450px;
+
+
+}
+
+.caixa-sorteio h1 {
+    font-size: 30px;
+    font-weight: 100;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.caixa-sorteio h2 {
+    font-size: 20px;
+    font-weight: 50px;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+
+.caixa-sorteio button {
+    margin-top: 20px;
+    width: 100px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    transition: .2s ease;
+}
+
+.caixa-sorteio button:hover {
+    cursor: pointer;
+    background: #7ea94d;
+}
+
+.caixa-formulario {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: column;
+    background-color: #eee9e474;
+    border-radius: 50px;
+    box-shadow: 3px 4px;
+    width: 660px;
+    height: 600px;
 
 
 
@@ -32,14 +95,31 @@
     font-weight: 100;
     color: #000;
     margin-bottom: 2rem;
-
 }
 
-.campo {
+.campo_mensagem {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+
+.campo_mensagem input{
+    padding: 10px;
+    border-radius: 10px;
+    outline: 0 solid transparent;
+    border: 0;
+    color: black;
+    transition: .2s ease;
+    width: 600px;
+    height: 250px;
+}
+.campo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .campo input {
@@ -59,6 +139,7 @@
     color: black;
     font-family: sans-serif;
     margin: 15px 0px;
+    justify-content: space-around;
 }
 
 .caixa-formulario button {
@@ -78,51 +159,6 @@
     background: #7ea94d;
 }
 
-.cad li a {
-    color: #fff;
-    background-color: #000;
-    margin-top: 20px;
-    width: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.login li a {
-    color: #fff;
-    background-color: #000;
-    margin-top: 20px;
-    width: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.home li a {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.quems li a {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-.projeto li a {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .footer {
     height: 30px;

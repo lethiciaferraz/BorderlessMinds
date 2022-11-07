@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carta.css">
+    <title>Enviar uma carta</title>
+</head>
+
+<!--Header-->
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/Group 1.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <a href="index.html"><li>HOME</li></a>
+                <a href="sobre.html"><li>SOBRE MIM</li></a>
+                <a href="cartas.html"><li>CONECTAR</li> </a>
+                <a href="#"><li>ORIGENS</li></a>
+                <a href="cadastro.html"><li class="bnt-nav c">CADASTRO</li></a>
+                <a href="login.html"><li class="bnt-nav">LOGIN</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Tela do cadastro-->
+    <div class="banner">
+        <div class="container1">
+            <div class="sorteio">
+                <div class="container2">
+                    <div class="caixa-sorteio">
+                        <h1>Be borderless!</h1>
+                        <h2>Sorteie um selo com um destino aleatório para sua carta.</h2>
+
+                        <div id="div_imagem"></div>
+                        <button onclick="sortear()">Sortear selo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="caixa-formulario">
+                <h1>Conecte-se com alguém.</h1>
+                <div class="campo">
+                    <label for="nome">Nome Completo: </label>
+                    <input type="nome" id="in_nome" placeholder="Nome e sobrenome ">
+                </div> 
+                <div class="campo">
+                    <label for="destino">Destino da carta: </label>
+                    <input type="destino" id="in_destino" placeholder="Lugar de destino da carta">
+                </div>
+                <div class="campo">
+                    <label for="idioma">Idioma da carta: </label>
+                    <input type="idioma" id="in_idioma" placeholder="Idioma">
+                </div>
+                <div class="campo">
+                    <label for="país">País que reside: </label>
+                    <input type="pais" id="in_pais" placeholder="País" >
+                </div>
+                <div class="campo_mensagem">
+                    <label for="Mensagem">Carta: </label>
+                    <input type="carta" id="in_carta" placeholder="Escreva uma carta de no mínimo 15 caracteres">
+                </div>
+                <div id="div_exibir"></div>
+                <button onclick="enviar()">ENVIAR</button>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!--sorteio-->
+
+
+
+
+
+    <!--Footer-->
+    <div class="footer">
+        <ul>
+            <li><b><a href="endereco.html">Endereço</a></b></li>
+            <li><b><a href="contato.html">Contato</a></b></li>
+        </ul>
+        Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido por Lethícia Ferraz
+    </div>
+</body>
+
+</html>
+
+<script>
+    function enviar() {
+        var email = in_email.value
+
+        if (email == 'empresa@gmail.com') {
+            window.location.href = "dashboard.html";
+
+        } else {
+            alert(`Erro!`)
+            div_exibir.innerHTML = `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.`
+        }
+    }
+    function sortear() {
+        var sorteio = parseInt(Math.random() * 9)
+
+
+        if (sorteio == 1) {
+            div_imagem.innerHTML = `<img src="./assets/selos/brasil.jpg" width=220px  alt="">`
+        } else if (sorteio == 2) {
+            div_imagem.innerHTML = `<img src="./assets/selos/alemanha.jpg"width=220px  alt="">`
+
+        } else if (sorteio == 3) {
+            div_imagem.innerHTML = `<img src="./assets/selos/japao.jpg" width=220px  alt="">`
+
+        } else if (sorteio == 4) {
+            div_imagem.innerHTML = `<img src="./assets/selos/canada.jpg" width=220px  alt="">`
+        } else if (sorteio == 5) {
+            div_imagem.innerHTML = `<img src="./assets/selos/frança.jpg" width=220px  alt="">`
+
+        } else if (sorteio == 6) {
+            div_imagem.innerHTML = `<img src="./assets/selos/espanha.jpg" width=220px  alt="">`       
+
+        } else if (sorteio == 7) {            
+            div_imagem.innerHTML = `<img src="./assets/selos/grecia.jpg" width=220px alt="">`
+
+        } else {
+            div_imagem.innerHTML = `<img src="./assets/selos/italia.jpg" width=220px  alt="">`
+        }
+    }
+</script>
+
+<!--<script>
+        function enviar() {
+            var email= in_email.value
+            var carta= in_carta.value
+            var nome= in_nome.value
+            var destino= in_carta.value
+
+
+
+            if(email== 'empresa@gmail.com' && mensagem.lenght > 15){
+            window.location.href="dashboard.html";
+
+            } else if (){
+                alert(`Erro!`)
+                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
+            }
+        }
+    </script>-->
