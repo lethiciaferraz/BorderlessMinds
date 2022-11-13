@@ -4,6 +4,18 @@ body {
     font-family: Poppins;
     background-color: #C1D5AD;
 }
+body::-webkit-scrollbar{
+    width: 1vh;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #C1D5AD
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #000;
+    border-radius: 2vh;
+}
 
 header {
     display: flex;
@@ -67,8 +79,7 @@ ul li {
 
 }
 
-figure,
-figure {
+.titulo1 {
     margin-top: 90px;
     padding: 60px;
     width: 600px;
@@ -84,6 +95,13 @@ figure {
     background-image: url('../assets/Seja\ sem\ fronteiras\ para\ conhecer\ o\ mundo..png');
 }
 
+.container1 p {
+    margin-top: 70px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 90px;
+
+}
 
 .container1 ul {
     padding: 120px;
@@ -108,8 +126,8 @@ figure {
     transition: 1 ease;
     display: flex;
     justify-content: center;
-    margin-top: 90px;
-    margin-left: 195px;
+    margin-top: 40px;
+    margin-left: 200px;
 }
 
 .container1 button:hover {
@@ -123,7 +141,69 @@ figure {
     margin-left: 90px;
 }
 
+.container4{
+    justify-content: center;
+}
 
+.titulo2 {
+    margin-top: 90px;
+    padding: 60px;
+    width: 1000px;
+    height: 100px;
+}
+
+#fig2 {
+    background-image: url('../assets/Group\ 19.png');
+    background-repeat: no-repeat;
+}
+
+#fig2:hover {
+    background-image: url('../assets/Group\ 19-PORT.png');
+}
+.sobre {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container4 h1{
+    font-size: 30px;
+    font-weight: 10px;
+    justify-content: center;
+    
+
+  }
+  .sobre .container4 {
+    justify-content: center;
+  }
+  
+  .box img {
+    width: 190px;
+  }
+  
+  .sobre .container4 .boxes {
+    display: flex;
+  }
+  
+  .sobre p {
+    text-align: center;
+  }
+  
+  .box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
 .footer {
     height: 30px;
     padding: 50px 0px;

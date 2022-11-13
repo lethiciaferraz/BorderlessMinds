@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carta.css">
-    <title>Enviar uma carta</title>
+    <link rel="shortcut icon" href="./assets/maple-leaf (2).png" type="image/x-icon">
+
+    <title>Envie uma carta</title>
 </head>
 
 <!--Header-->
@@ -20,16 +22,27 @@
         </div>
         <nav>
             <ul>
-                <a href="index.html"><li>HOME</li></a>
-                <a href="sobre.html"><li>SOBRE MIM</li></a>
-                <a href="cartas.html"><li>CONECTAR</li> </a>
-                <a href="#"><li>ORIGENS</li></a>
-                <a href="cadastro.html"><li class="bnt-nav c">CADASTRO</li></a>
-                <a href="login.html"><li class="bnt-nav">LOGIN</li></a>
+                <a href="index.html">
+                    <li>HOME</li>
+                </a>
+                <a href="sobre.html">
+                    <li>SOBRE MIM</li>
+                </a>
+                <a href="cartas.html">
+                    <li>CONECTAR</li>
+                </a>
+                <a href="#">
+                    <li>ORIGENS</li>
+                </a>
+                <a href="cadastro.html">
+                    <li class="bnt-nav c">CADASTRO</li>
+                </a>
+                <a href="login.html">
+                    <li class="bnt-nav">LOGIN</li>
+                </a>
             </ul>
         </nav>
     </header>
-
     <!--Tela do cadastro-->
     <div class="banner">
         <div class="container1">
@@ -39,40 +52,49 @@
                         <h1>Be borderless!</h1>
                         <h2>Sorteie um selo com um destino aleatório para sua carta.</h2>
 
-                        <div id="div_imagem"></div>
+                        <div id="div_imagem"> <img id="selo" src="" width=220px  alt=""></div>
                         <button onclick="sortear()">Sortear selo</button>
                     </div>
                 </div>
             </div>
             <div class="caixa-formulario">
-                <h1>Conecte-se com alguém.</h1>
-                <div class="campo">
-                    <label for="nome">Nome Completo: </label>
-                    <input type="nome" id="in_nome" placeholder="Nome e sobrenome ">
-                </div> 
-                <div class="campo">
-                    <label for="destino">Destino da carta: </label>
-                    <input type="destino" id="in_destino" placeholder="Lugar de destino da carta">
+               <div class="titulo"><h1>Conecte-se com alguém.</h1></div> 
+                <div class="caixas">
+                    <div class="caixa1">
+                    <div class="campo">
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="in_nome" placeholder="Nome ">
+                    </div>
+                    <div class="campo">
+                        <label for="nome">Sobrenome: </label>
+                        <input type="text" id="in_sobrenome" placeholder="sobrenome">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label for="idioma">Idioma da carta: </label>
-                    <input type="idioma" id="in_idioma" placeholder="Idioma">
+                    <div class="caixa2">
+                    <div class="campo">
+                        <label for="destino">Destino: </label>
+                        <input type="text" id="in_destino" >
+                    </div>
+                    <div class="campo">
+                        <label for="idioma">Idioma: </label>
+                        <input type="text" id="in_idioma" placeholder="Idioma da carta">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label for="país">País que reside: </label>
-                    <input type="pais" id="in_pais" placeholder="País" >
+                <div class="caixa3">
+                        <label for="Mensagem">Carta: </label>
+                        <textarea name="" id="" cols="70" rows="10"></textarea>
+                    </div>
                 </div>
-                <div class="campo_mensagem">
-                    <label for="Mensagem">Carta: </label>
-                    <input type="carta" id="in_carta" placeholder="Escreva uma carta de no mínimo 15 caracteres">
+                    <div class="botao">
+                        <button onclick="enviar()">ENVIAR</button>
+                        
                 </div>
-                <div id="div_exibir"></div>
-                <button onclick="enviar()">ENVIAR</button>
+                </div>
             </div>
         </div>
     </div>
 
-   
+
 
     <!--sorteio-->
 
@@ -91,8 +113,9 @@
 </body>
 
 </html>
-
 <script>
+
+    
     function enviar() {
         var email = in_email.value
 
@@ -104,34 +127,41 @@
             div_exibir.innerHTML = `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.`
         }
     }
+    var paises = [
+        {nome:"Italia",
+        img: "./assets/selos/italia.jpg"}, 
+        {nome:"Alemanha",
+        img: "./assets/selos/alemanha.jpg"}, 
+        {nome:"Qatar",
+        img: "./assets/selos/qatar.jpg"},  
+        {nome:"Reino Unido",
+        img: "./assets/selos/inglaterra.jpg"},
+        {nome:"Japão",
+        img: "./assets/selos/japao.jpg"},
+        {nome:"Australia",
+        img: "./assets/selos/Australia.jpg"},
+        {nome:"Canada",
+        img: "./assets/selos/canada.jpg"},
+        {nome:"França",
+        img: "./assets/selos/frança.jpg"},
+        {nome:"Grecia",
+        img: "./assets/selos/grecia.jpg"},
+        {nome:"Espanha",
+        img: "./assets/selos/espanha.jpg" },
+        {nome:"Brasil",
+        img: "./assets/selos/brasil.jpg"},
+
+    ]
     function sortear() {
-        var sorteio = parseInt(Math.random() * 9)
+        var sorteio = parseInt(Math.random() * 11)
 
+        selo.src=paises[sorteio].img
+        in_destino.value=paises[sorteio].nome
 
-        if (sorteio == 1) {
-            div_imagem.innerHTML = `<img src="./assets/selos/brasil.jpg" width=220px  alt="">`
-        } else if (sorteio == 2) {
-            div_imagem.innerHTML = `<img src="./assets/selos/alemanha.jpg"width=220px  alt="">`
-
-        } else if (sorteio == 3) {
-            div_imagem.innerHTML = `<img src="./assets/selos/japao.jpg" width=220px  alt="">`
-
-        } else if (sorteio == 4) {
-            div_imagem.innerHTML = `<img src="./assets/selos/canada.jpg" width=220px  alt="">`
-        } else if (sorteio == 5) {
-            div_imagem.innerHTML = `<img src="./assets/selos/frança.jpg" width=220px  alt="">`
-
-        } else if (sorteio == 6) {
-            div_imagem.innerHTML = `<img src="./assets/selos/espanha.jpg" width=220px  alt="">`       
-
-        } else if (sorteio == 7) {            
-            div_imagem.innerHTML = `<img src="./assets/selos/grecia.jpg" width=220px alt="">`
-
-        } else {
-            div_imagem.innerHTML = `<img src="./assets/selos/italia.jpg" width=220px  alt="">`
-        }
+       
     }
 </script>
+
 
 <!--<script>
         function enviar() {

@@ -1,3 +1,7 @@
+
+.banner {
+     background-image: url(../assets/map-117174_1280.png);
+}
 .container1 {
     display: flex;
     margin-top: 0px;
@@ -19,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #eee9e474;
+    background-color: #EEE9E4;
     border-radius: 50px;
     box-shadow: 3px 4px;
 
