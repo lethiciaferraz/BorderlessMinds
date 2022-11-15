@@ -62,12 +62,12 @@
                 <div class="caixas">
                     <div class="caixa1">
                     <div class="campo">
-                        <label for="nome">Nome: </label>
-                        <input type="text" id="in_nome" placeholder="Nome ">
+                        <label for="nome">Nome Completo: </label>
+                        <input type="text" id="in_nome" placeholder="Nome e sobrenome">
                     </div>
                     <div class="campo">
-                        <label for="nome">Sobrenome: </label>
-                        <input type="text" id="in_sobrenome" placeholder="sobrenome">
+                        <label for="email">Email: </label>
+                        <input type="text" id="in_email" placeholder="seuemail@gmail.com">
                     </div>
                 </div>
                     <div class="caixa2">
@@ -84,6 +84,7 @@
                         <label for="Mensagem">Carta: </label>
                         <textarea name="" id="" cols="70" rows="10"></textarea>
                     </div>
+                    <div id="div_exibir"></div>
                 </div>
                     <div class="botao">
                         <button onclick="enviar()">ENVIAR</button>
@@ -158,26 +159,23 @@
         selo.src=paises[sorteio].img
         in_destino.value=paises[sorteio].nome
 
-       
-    }
+        
+    } 
+
+    function enviar() {
+            var email= in_email.value
+            var nome= in_nome.value
+
+
+
+            if(email== ''&& nome == '' && in_destino.value =='' ){
+                alert(`Erro!`)
+                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
+                
+            } else {
+                window.location.href="dashboard.html";
+            }
+        }
 </script>
 
 
-<!--<script>
-        function enviar() {
-            var email= in_email.value
-            var carta= in_carta.value
-            var nome= in_nome.value
-            var destino= in_carta.value
-
-
-
-            if(email== 'empresa@gmail.com' && mensagem.lenght > 15){
-            window.location.href="dashboard.html";
-
-            } else if (){
-                alert(`Erro!`)
-                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
-            }
-        }
-    </script>-->
