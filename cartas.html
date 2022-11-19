@@ -31,9 +31,6 @@
                 <a href="cartas.html">
                     <li>CONECTAR</li>
                 </a>
-                <a href="#">
-                    <li>ORIGENS</li>
-                </a>
                 <a href="cadastro.html">
                     <li class="bnt-nav c">CADASTRO</li>
                 </a>
@@ -94,13 +91,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <!--sorteio-->
-
-
-
 
 
     <!--Footer-->
@@ -170,7 +160,7 @@
 
             if(email== ''&& nome == '' && in_destino.value =='' ){
                 alert(`Erro!`)
-                div_exibir.innerHTML= `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.` 
+                div_exibir.innerHTML= `Há campos em branco. Preencha todos os campos.` 
                 
             } else {
                 window.location.href="dashboard.html";

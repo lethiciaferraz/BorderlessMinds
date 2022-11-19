@@ -2,7 +2,7 @@
 
 body {
     font-family: Poppins;
-    background-color:#D5BAAD;
+    background-color:#e5e5e5;
 }
 
 header {
@@ -57,40 +57,112 @@ ul li {
     box-shadow: 0 0 10px #adf86c;
 }
 
-.footer {
-    height: 30px;
-    padding: 50px 0px;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-}
-
-.footer ul {
-    display: flex;
-    list-style: none;
-    margin-bottom: 50px;
-    justify-content: center;
-    margin-top: 20px;
-
-}
-
-.footer ul li {
-    color: #fff;
-    font-size: medium;
-}
-
-.footer ul li a {
-    text-decoration: none;
-    color: #fff;
-    margin: 50px;
-}
 
 body {
     margin: 0px;
 
 }
+
+.container4{
+    justify-content: center;
+}
+
+.titulo2 {
+    margin-top: 90px;
+    padding: 60px;
+    width: 1000px;
+    height: 100px;
+}
+
+#fig2 {
+    background-image: url('../assets/Group\ 19.png');
+    background-repeat: no-repeat;
+}
+
+#fig2:hover {
+    background-image: url('../assets/Group\ 19-PORT.png');
+}
+.sobre {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container4 h1{
+    font-size: 30px;
+    font-weight: 10px;
+    justify-content: center;
+    
+
+}
+  .sobre .container4 {
+    justify-content: center;
+  }
+  
+  .box img {
+    width: 300px;
+}
+
+.sobre .container4 .boxes {
+    display: flex;
+}
+
+.texto {
+   padding: 40px;
+   text-align: center;
+   text-size-adjust: 90px;
+}
+  
+ 
+
+  .box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  
+  .box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+  .footer {
+          height: 30px;
+          padding: 50px 0px;
+          background-color: #000;
+          color: #fff;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: small;
+      }
+      
+      .footer ul {
+          display: flex;
+          list-style: none;
+          margin-bottom: 50px;
+          justify-content: center;
+          margin-top: 20px;
+      
+      }
+      
+      .footer ul li {
+          color: #fff;
+          font-size: medium;
+      }
+      
+      .footer ul li a {
+          text-decoration: none;
+          color: #fff;
+          margin: 50px;
+      }
+  
