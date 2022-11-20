@@ -2,7 +2,7 @@
 
 body {
     font-family: Poppins;
-    background-color:#e5e5e5;
+    background-color: #e5e5e5;
 }
 
 header {
@@ -63,14 +63,16 @@ body {
 
 }
 
-.container4{
+.container1 {
     justify-content: center;
+
 }
 
 .titulo2 {
+    display: flex;
     margin-top: 90px;
     padding: 60px;
-    width: 1000px;
+    width: 900px;
     height: 100px;
 }
 
@@ -82,87 +84,159 @@ body {
 #fig2:hover {
     background-image: url('../assets/Group\ 19-PORT.png');
 }
+
 .sobre {
     background-color: #e5e5e5;
     display: flex;
     justify-content: center;
-  }
-  
-  .container4 h1{
-    font-size: 30px;
+}
+
+.container1 h2 {
+    font-size: 20px;
     font-weight: 10px;
     justify-content: center;
-    
+
 
 }
-  .sobre .container4 {
+
+.sobre .container1 {
     justify-content: center;
-  }
-  
-  .box img {
+}
+
+.box img {
     width: 300px;
 }
 
-.sobre .container4 .boxes {
+.sobre .container1 .boxes {
     display: flex;
 }
 
 .texto {
-   padding: 40px;
-   text-align: center;
-   text-size-adjust: 90px;
+    padding: 40px;
+    text-align: center;
+    text-size-adjust: 90px;
 }
-  
- 
 
-  .box {
+
+
+.box {
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-  }
-  
-  
-  .box {
+}
+
+
+.box {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-  }
+}
 
 
-  .footer {
-          height: 30px;
-          padding: 50px 0px;
-          background-color: #000;
-          color: #fff;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          flex-direction: column;
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: small;
-      }
-      
-      .footer ul {
-          display: flex;
-          list-style: none;
-          margin-bottom: 50px;
-          justify-content: center;
-          margin-top: 20px;
-      
-      }
-      
-      .footer ul li {
-          color: #fff;
-          font-size: medium;
-      }
-      
-      .footer ul li a {
-          text-decoration: none;
-          color: #fff;
-          margin: 50px;
-      }
-  
+.container2 {
+    justify-content: center;
+}
+
+.titulo3 {
+    margin-top: 90px;
+    padding: 60px;
+    width: 1000px;
+    height: 100px;
+}
+
+#fig3 {
+    background-image: url('../assets/CURIOSITIES\ ABOUT\ LEARNING\ A\ NEW\ LANGUAGE.png');
+    background-repeat: no-repeat;
+}
+
+#fig3:hover {
+    background-image: url('../assets/CURIOSIDADES\ SOBRE\ APRENDER\ UM\ IDIOMA.png');
+}
+
+.curiosidades {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+}
+
+.container2 h2 {
+    font-size: 20px;
+    font-weight: 10px;
+    justify-content: center;
+
+
+}
+
+.curiosidades .container2 {
+    justify-content: center;
+}
+
+.box1 img {
+    width: 300px;
+}
+
+.curiosidades .container2 .boxes1 {
+    display: flex;
+}
+
+.texto {
+    padding: 40px;
+    text-align: center;
+    text-size-adjust: 90px;
+}
+
+
+
+.box1 {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.box1 {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.footer {
+    height: 30px;
+    padding: 50px 0px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.footer ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 50px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.footer ul li {
+    color: #fff;
+    font-size: medium;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin: 50px;
+}
