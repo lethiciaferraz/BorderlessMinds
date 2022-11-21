@@ -211,3 +211,41 @@ ul li {
     font-family: poppins;
 
 }
+
+.footer {
+    height: 30px;
+    padding: 50px 0px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.footer ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 50px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.footer ul li {
+    color: #fff;
+    font-size: medium;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin: 50px;
+}
+
+body {
+    margin: 0px;
+
+}

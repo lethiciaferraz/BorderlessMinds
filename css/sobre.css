@@ -2,14 +2,31 @@
 
 body {
     font-family: Poppins;
-    background-color: #e5e5e5;
+    background-color: #C1D5AD;
+}
+
+body::-webkit-scrollbar {
+    width: 1vh;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #C1D5AD
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 2vh;
+}
+
+.html {
+    scroll-behavior: smooth;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     padding: 2rem 4rem;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
 }
 
 nav {
@@ -57,186 +74,100 @@ ul li {
     box-shadow: 0 0 10px #adf86c;
 }
 
-
-body {
-    margin: 0px;
-
-}
-
 .container1 {
-    justify-content: center;
+    display: flex;
+    margin-top: 0px;
+    padding: 105px;
+    color: #000;
+    justify-content: flex-start;
+    height: 180vh;
+    width: 1400px;
 
 }
 
-.titulo2 {
-    display: flex;
+.titulo1 {
     margin-top: 90px;
     padding: 60px;
-    width: 900px;
+    width: 600px;
     height: 100px;
 }
 
+#fig1 {
+    background-image: url('../assets/torontinho2.png');
+    background-repeat: no-repeat;
+    width: 90px;
+
+}
+
+#fig1:hover {
+    background-image: url('../assets/torontinho1.png');
+    width: 90px;
+
+}
+
 #fig2 {
-    background-image: url('../assets/Group\ 19.png');
+    background-image: url('../assets/IMG_3228.png');
     background-repeat: no-repeat;
 }
 
 #fig2:hover {
-    background-image: url('../assets/Group\ 19-PORT.png');
+    background-image: url('../assets/Rectangle\ 180.png');
 }
 
-.sobre {
-    background-color: #e5e5e5;
-    display: flex;
-    justify-content: center;
-}
-
-.container1 h2 {
+.container1 p {
+    margin-top: 70px;
     font-size: 20px;
-    font-weight: 10px;
-    justify-content: center;
-
-
-}
-
-.sobre .container1 {
-    justify-content: center;
-}
-
-.box img {
-    width: 300px;
-}
-
-.sobre .container1 .boxes {
-    display: flex;
-}
-
-.texto {
-    padding: 40px;
     text-align: center;
-    text-size-adjust: 90px;
+    margin-right: 90px;
+
 }
 
-
-
-.box {
-    margin: 10px;
+.container1 ul {
+    padding: 120px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    color: #000;
+    font-family: Poppins;
+    font-size: xx-large;
 
 }
 
 
-.box {
-    margin-top: 50px;
+
+.container1 button {
+    width: 120px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    transition: 1 ease;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-
-.container2 {
     justify-content: center;
+    margin-top: 40px;
+    margin-left: 200px;
 }
 
-.titulo3 {
-    margin-top: 90px;
+.container1 button:hover {
+    cursor: pointer;
+    background: #c3f38d;
+}
+
+.image img {
+    border-radius: 500px;
+    box-shadow: 0 7px 10px #000;
+    margin-left: 90px;
+}
+
+
+.titulo2 {
+    display: flex;
+    justify-content: center;
     padding: 60px;
-    width: 1000px;
-    height: 100px;
-}
-
-#fig3 {
-    background-image: url('../assets/CURIOSITIES\ ABOUT\ LEARNING\ A\ NEW\ LANGUAGE.png');
-    background-repeat: no-repeat;
-}
-
-#fig3:hover {
-    background-image: url('../assets/CURIOSIDADES\ SOBRE\ APRENDER\ UM\ IDIOMA.png');
-}
-
-.curiosidades {
-    background-color: #e5e5e5;
-    display: flex;
-    justify-content: center;
-}
-
-.container2 h2 {
-    font-size: 20px;
-    font-weight: 10px;
-    justify-content: center;
-
-
-}
-
-.curiosidades .container2 {
-    justify-content: center;
-}
-
-.box1 img {
-    width: 300px;
-}
-
-.curiosidades .container2 .boxes1 {
-    display: flex;
-}
-
-.texto {
-    padding: 40px;
-    text-align: center;
-    text-size-adjust: 90px;
+    width: 700px;
 }
 
 
 
-.box1 {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-}
-
-
-.box1 {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.footer {
-    height: 30px;
-    padding: 50px 0px;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-}
-
-.footer ul {
-    display: flex;
-    list-style: none;
-    margin-bottom: 50px;
-    justify-content: center;
-    margin-top: 20px;
-
-}
-
-.footer ul li {
-    color: #fff;
-    font-size: medium;
-}
-
-.footer ul li a {
-    text-decoration: none;
-    color: #fff;
-    margin: 50px;
-}
