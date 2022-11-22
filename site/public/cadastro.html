@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="./assets/maple-leaf (2).png" type="image/x-icon">
-
+ 
+    <script src="./js/funcoes.js"></script>
+    
     <title>Cadastro</title>
 </head>
 
@@ -33,6 +35,10 @@
 
     <!--Tela do cadastro-->
     <div class="banner">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
         <div class="container1">
             <div class="caixa-formulario">
                 <div class="titulo">
@@ -72,6 +78,12 @@
                 <div id="div_exibir"></div>
                 <div class="botao">
                     <button onclick="cadastrar()">Cadastrar</button>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+                <div id="div_erros_login">
+
                 </div>
             </div>
         </div>

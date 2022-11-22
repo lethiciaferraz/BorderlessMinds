@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="./assets/maple-leaf (2).png" type="image/x-icon">
 
+    <script src="./js/funcoes.js"></script>
+
     <title>Login</title>
 </head>
 
@@ -17,6 +19,7 @@
 
 <body>
     <header>
+        
         <div class="logo">
             <img src="assets/Group 1.png" alt="">
         </div>
@@ -33,6 +36,10 @@
 
     <!--Tela do login-->
     <div class="banner">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
         <div class="container1">
                 <div class="caixa-formulario">
                     <h1>Seja bem-vindo!!</h1>
@@ -46,7 +53,13 @@
                     <input type="password" id="in_senha" placeholder="**********">
                 </div>
                 <div id="div_exibir"></div>
-                <button onclick="login()">LOGIN</button>
+                <button onclick="entrar()">LOGIN</button>
+            </div>
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif">
+            </div>
+            <div id="div_erros_login">
+
             </div>
         </div>
 </div>
@@ -64,16 +77,75 @@
 </html>
 
 <script>
-    function login() {
-        var email = in_email.value
-        var senha = in_senha.value
 
-        if (email == 'empresa@gmail.com' && senha == 'sptech') {
-            window.location.href = "dashboard.html";
 
-        } else {
-            alert(`Erro!`)
-            div_exibir.innerHTML = `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.`
+    function entrar() {
+        aguardar();
+
+        var email = in_email.value;
+        var senha = in_senha.value;
+
+        if (email == "" || senha == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
         }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
 </script>
