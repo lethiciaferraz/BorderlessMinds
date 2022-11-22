@@ -2,7 +2,7 @@
 
 body {
     font-family: Poppins;
-    background-color: #C1D5AD;
+    background-color: #e5e5e5;
 }
 
 body::-webkit-scrollbar {
@@ -26,7 +26,8 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 2rem 4rem;
-    border-bottom: 3px solid black;
+    border-bottom: 1px solid black;
+    
 }
 
 nav {
@@ -74,141 +75,156 @@ ul li {
     box-shadow: 0 0 10px #adf86c;
 }
 
+
+body {
+    margin: 0px;
+
+}
+
 .container1 {
-    display: flex;
-    margin-top: 0px;
-    padding: 85px;
-    color: #000;
-    justify-content: flex-start;
-    height: 70vh;
-
-}
-
-.titulo1 {
-    margin-top: 90px;
-    padding: 60px;
-    width: 600px;
-    height: 100px;
-}
-
-#fig1 {
-    background-image: url('../assets/Be\ borderless\ to\ know\ the\ world..png');
-    background-repeat: no-repeat;
-}
-
-#fig1:hover {
-    background-image: url('../assets/Seja\ sem\ fronteiras\ para\ conhecer\ o\ mundo..png');
-}
-
-.container1 p {
-    margin-top: 70px;
-    font-size: 20px;
-    text-align: center;
-    margin-right: 90px;
-
-}
-
-.container1 ul {
-    padding: 120px;
-    display: flex;
-    justify-content: flex-start;
-    color: #000;
-    font-family: Poppins;
-    font-size: xx-large;
-
-}
-
-
-
-.container1 button {
-    width: 120px;
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    transition: 1 ease;
-    display: flex;
     justify-content: center;
-    margin-top: 40px;
-    margin-left: 200px;
-}
 
-.container1 button:hover {
-    cursor: pointer;
-    background: #7ea94d;
-}
-
-.image img {
-    border-radius: 500px;
-    box-shadow: 0 7px 10px #000;
-    margin-left: 90px;
-}
-
-.container3 {
-    display: flex;
-    justify-content: center;
 }
 
 .titulo2 {
     display: flex;
-    justify-content: center;
+    margin-top: 90px;
     padding: 60px;
-    width: 700px;
+    width: 900px;
+    height: 100px;
 }
 
-
 #fig2 {
-    background-image: url('../assets/WHAT\ WE\ DO.png');
+    background-image: url('../assets/Group\ 19.png');
     background-repeat: no-repeat;
 }
 
 #fig2:hover {
-    background-image: url('../assets/o\ que\ fazemos.png');
+    background-image: url('../assets/Group\ 19-PORT.png');
+}
+
+.sobre {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+}
+
+.container1 h2 {
+    font-size: 20px;
+    font-weight: 10px;
+    justify-content: center;
+
+
+}
+
+.sobre .container1 {
+    justify-content: center;
+}
+
+.box img {
+    width: 300px;
+}
+
+.sobre .container1 .boxes {
+    display: flex;
+}
+
+.texto {
+    padding: 40px;
+    text-align: center;
+    text-size-adjust: 90px;
+}
+
+
+
+.box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
 .container2 {
-    margin: 0 auto;
+    justify-content: center;
+}
+
+.titulo3 {
+    margin-top: 90px;
+    padding: 60px;
+    width: 1000px;
+    height: 100px;
+    margin-left: 27vh;
+
+}
+
+#fig3 {
+    background-image: url('../assets/CURIOSITIES\ ABOUT\ LEARNING\ A\ NEW\ LANGUAGE.png');
+    background-repeat: no-repeat;
+}
+
+#fig3:hover {
+    background-image: url('../assets/CURIOSIDADES\ SOBRE\ APRENDER\ UM\ IDIOMA.png');
+}
+
+.curiosidades {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+}
+
+.container2 h2 {
+    font-size: 20px;
+    font-weight: 10px;
+    justify-content: center;
+
+
+}
+
+.curiosidades .container2 {
+    justify-content: center;
+}
+
+.box1 img {
+    width: 300px;
+}
+
+.curiosidades .container2 .boxes1 {
+    display: flex;
+}
+
+.texto {
     padding: 40px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-content: center;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-
-}
-
-.caixas,
-.caixa {
-    display: flex;
-}
-
-.caixa {
-    align-items: center;
-    margin: 10px 15px;
-    width: 250px;
-    line-height: 1.5;
-    padding: 3rem 2rem;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #eee9e491;
-    border-radius: 50px;
-}
-
-.caixa h4 {
-    margin: 25px 0;
-    color: black;
-    font-weight: 600;
-    font-family: poppins;
-}
-
-.caixa p {
     text-align: center;
-    color: black;
-    font-family: poppins;
+    text-size-adjust: 90px;
+}
+
+
+
+.box1 {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.box1 {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
@@ -243,9 +259,4 @@ ul li {
     text-decoration: none;
     color: #fff;
     margin: 50px;
-}
-
-body {
-    margin: 0px;
-
 }
