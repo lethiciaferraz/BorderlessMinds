@@ -66,6 +66,7 @@
 }
 
 .caixa-formulario button {
+    display: flex;
     margin-top: 20px;
     width: 100px;
     background: #000;

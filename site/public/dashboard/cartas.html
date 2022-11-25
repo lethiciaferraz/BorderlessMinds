@@ -1,101 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/carta.css">
-    <link rel="shortcut icon" href="./assets/maple-leaf (2).png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <title>Borderless Minds | Dashboards</title>
 
-    <title>Envie uma carta</title>
+    <link rel="stylesheet" href="carta.css">
+    <link rel="stylesheet" href="mural.css">
+
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
+
+<body onload="validarSessao(), atualizarFeed()" style="background-color: #C1D5AD;">
+    <!-- <body onload="validarSessao()"> -->
+
+<body onload=" atualizarFeed()">
+    <div class="janela">
+
+
+        <div class="header-left">
+
+            <h1>BORDERLESS MINDS</h1>
+
+            <div class="hello">
+                <h3>Olá,<span id="b_usuario">usuário!</span></h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="mural.html">
+                    <h3>Mural</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Idiomas dos usuarios</h3>
+                </a>
+            </div>
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Seu idioma</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./cartas.html"></a>
+                <h3>Cartas</h3>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
 
 <!--Header-->
 
-<body>
-    <header>
-        <div class="logo">
-            <img src="assets/Group 1.png" alt="">
-        </div>
-        <nav>
-            <ul>
-                <a href="index.html"><li>HOME</li></a>
-                <a href="projeto.html"><li>PROJETO</li></a>
-                <a href="sobre.html"><li>SOBRE MIM</li></a>
-                <a href="cadastro.html"><li class="bnt-nav c">CADASTRO</li></a>
-                <a href="login.html"> <li class="bnt-nav">LOGIN</li></a>
-            </ul>
-        </nav>
-    </header>
+
     <!--Tela do cadastro-->
     <div class="banner">
         <div class="container1">
             <div class="sorteio">
                 <div class="container2">
                     <div class="caixa-sorteio">
-                        <h1>Be borderless!</h1>
-                        <h2>Sorteie um selo com um destino aleatório para sua carta.</h2>
+                        <div class="titulo">
+                            <h1>Be borderless!</h1>
+                        </div>
+                        <h2>Sorteie um selo com um <br>
+                            destino aleatório para sua carta.</h2>
 
-                        <div id="div_imagem"> <img id="selo" src="" width=220px  alt=""></div>
+                        <div id="div_imagem"> <img id="selo" src="" width=220px alt=""></div>
                         <button onclick="sortear()">Sortear selo</button>
                     </div>
                 </div>
             </div>
             <div class="caixa-formulario">
-               <div class="titulo"><h1>Conecte-se com alguém.</h1></div> 
+                <div class="titulo">
+                    <h1>Conecte-se com alguém.</h1>
+                </div>
                 <div class="caixas">
                     <div class="caixa1">
-                    <div class="campo">
-                        <label for="nome">Nome Completo: </label>
-                        <input type="text" id="in_nome" placeholder="Nome e sobrenome">
+                        <div class="campo">
+                            <label for="nome">Nome Completo: </label>
+                            <input type="text" id="in_nome" placeholder="Nome e sobrenome">
+                        </div>
+                        <div class="campo">
+                            <label for="email">Email: </label>
+                            <input type="text" id="in_email" placeholder="seuemail@gmail.com">
+                        </div>
                     </div>
-                    <div class="campo">
-                        <label for="email">Email: </label>
-                        <input type="text" id="in_email" placeholder="seuemail@gmail.com">
-                    </div>
-                </div>
                     <div class="caixa2">
-                    <div class="campo">
-                        <label for="destino">Destino: </label>
-                        <input type="text" id="in_destino" >
+                        <div class="campo">
+                            <label for="destino">Destino: </label>
+                            <input type="text" id="in_destino">
+                        </div>
+                        <div class="campo">
+                            <label for="idioma">Idioma: </label>
+                            <input type="text" id="in_idioma" placeholder="Idioma da carta">
+                        </div>
                     </div>
-                    <div class="campo">
-                        <label for="idioma">Idioma: </label>
-                        <input type="text" id="in_idioma" placeholder="Idioma da carta">
-                    </div>
-                </div>
-                <div class="caixa3">
+                    <div class="caixa3">
                         <label for="Mensagem">Carta: </label>
                         <textarea name="" id="" cols="70" rows="10"></textarea>
                     </div>
                     <div id="div_exibir"></div>
                 </div>
-                    <div class="botao">
-                        <button onclick="enviar()">ENVIAR</button>
-                        
-                </div>
+                <div class="botao">
+                    <button onclick="enviar()">ENVIAR</button>
+
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!--Footer-->
-    <div class="footer">
-        <ul>
-            <li><b><a href="contato.html">Contato</a></b></li>
-        </ul>
-        Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido com amor por Lethícia Ferraz
     </div>
+
 </body>
 
 </html>
 <script>
 
-    
+
     function enviar() {
         var email = in_email.value
 
@@ -107,54 +145,79 @@
             div_exibir.innerHTML = `<br> Login e/ou senha incorretos! <br> Preencha os campos novamente.`
         }
     }
+    
     var paises = [
-        {nome:"Italia",
-        img: "./assets/selos/italia.jpg"}, 
-        {nome:"Alemanha",
-        img: "./assets/selos/alemanha.jpg"}, 
-        {nome:"Qatar",
-        img: "./assets/selos/qatar.jpg"},  
-        {nome:"Reino Unido",
-        img: "./assets/selos/inglaterra.jpg"},
-        {nome:"Japão",
-        img: "./assets/selos/japao.jpg"},
-        {nome:"Australia",
-        img: "./assets/selos/Australia.jpg"},
-        {nome:"Canada",
-        img: "./assets/selos/canada.jpg"},
-        {nome:"França",
-        img: "./assets/selos/frança.jpg"},
-        {nome:"Grecia",
-        img: "./assets/selos/grecia.jpg"},
-        {nome:"Espanha",
-        img: "./assets/selos/espanha.jpg" },
-        {nome:"Brasil",
-        img: "./assets/selos/brasil.jpg"},
+        {
+            nome: "Italia",
+            img: "../assets/selos/italia.jpg"
+        },
+        {
+            nome: "Alemanha",
+            img: "../assets/selos/alemanha.jpg"
+        },
+        {
+            nome: "Qatar",
+            img: "../assets/selos/qatar.jpg"
+        },
+        {
+            nome: "Reino Unido",
+            img: "../assets/selos/inglaterra.jpg"
+        },
+        {
+            nome: "Japão",
+            img: "../assets/selos/japao.jpg"
+        },
+        {
+            nome: "Australia",
+            img: "../assets/selos/Australia.jpg"
+        },
+        {
+            nome: "Canada",
+            img: "../assets/selos/canada.jpg"
+        },
+        {
+            nome: "França",
+            img: "../assets/selos/frança.jpg"
+        },
+        {
+            nome: "Grecia",
+            img: "../assets/selos/grecia.jpg"
+        },
+        {
+            nome: "Espanha",
+            img: "../assets/selos/espanha.jpg"
+        },
+        {
+            nome: "Brasil",
+            img: "../assets/selos/brasil.jpg"
+        },
 
     ]
     function sortear() {
         var sorteio = parseInt(Math.random() * 11)
 
-        selo.src=paises[sorteio].img
-        in_destino.value=paises[sorteio].nome
+        selo.src = paises[sorteio].img
+        in_destino.value = paises[sorteio].nome
 
-        
-    } 
+
+    }
 
     function enviar() {
-            var email= in_email.value
-            var nome= in_nome.value
+        var email = in_email.value
+        var nome = in_nome.value
+        var destino = in_destino.value
 
 
 
-            if(email== ''&& nome == '' && in_destino.value =='' ){
-                alert(`Erro!`)
-                div_exibir.innerHTML= `Há campos em branco. Preencha todos os campos.` 
-                
-            } else {
-                alert `Carta enviada com sucesso! Great Job being Borderless :)`
-            }
+
+        if (email == '' && nome == ''  ) {
+            alert(`Erro!`)
+            div_exibir.innerHTML = `Há campos em branco. Preencha todos os campos.`
+
+        } else if (destino == ''){
+            alert (`Você não sorteou um destino para sua carta, clique no botão sortear`)
+        }else {
+            alert`Carta enviada com sucesso! Great Job being Borderless :)`
         }
+    }
 </script>
-
-

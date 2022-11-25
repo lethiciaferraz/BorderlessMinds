@@ -83,10 +83,12 @@ function cadastrar(req, res) {
             .then(
                 function (resultado) {
                     res.json(resultado);
+                console.log("deu erro na controller");
                 }
             ).catch(
                 function (erro) {
                     console.log(erro);
+                    console.log("erro no catch")
                     console.log(
                         "\nHouve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage

@@ -3,15 +3,22 @@ body {
     background-color: #C1D5AD;
 }
 
+.banner {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 300px;
+}
+
 .container1 {
     display: flex;
-    margin-top: 0px;
-    padding: 85px;
+    margin-top: 5vh;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    justify-content: space-evenly;
-    color: #000;
+    justify-content:space-between;
+    margin-left: 22vh;
 
+    color: #000;
+    gap: 10vh;
 
 
 }
@@ -19,7 +26,6 @@ body {
 .container2 {
     display: flex;
     margin-top: 0px;
-    padding: 85px;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     justify-content: flex-start;
@@ -36,14 +42,17 @@ body {
     background-color: #EEE9E4;
     border-radius: 50px;
     box-shadow: 3px 4px;
-    width: auto;
-    height: 450px;
-    position: relative
+    width: 330px;
+    height: 500px;
+    position: relative;
+    min-height: 77vh;
+    
 }
+
 
 .caixa-sorteio h1 {
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 600;
     color: #000;
     margin-bottom: 2rem;
 }
@@ -67,7 +76,6 @@ body {
     transition: .2s ease;
     position: absolute;
     bottom: 10px;
-    right: 162px;
 }
 
 .caixa-sorteio button:hover {
@@ -84,7 +92,8 @@ body {
     background-color: #EEE9E4;
     border-radius: 50px;
     box-shadow: 3px 4px;
-    width: 660px;
+    width: 460px;
+    
 
 
 
@@ -118,15 +127,6 @@ body {
 
 }
 
-.caixa-formulario .titulo {
-    font-size: 30px;
-    font-weight: 100;
-    color: #000;
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
 
 .campo_mensagem {
     display: flex;
@@ -151,6 +151,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 3px;
 }
 
 .campo input {
@@ -191,38 +192,6 @@ body {
 }
 
 
-.footer {
-    height: 30px;
-    padding: 50px 0px;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-}
-
-.footer ul {
-    display: flex;
-    list-style: none;
-    margin-bottom: 50px;
-    justify-content: center;
-    margin-top: 20px;
-
-}
-
-.footer ul li {
-    color: #fff;
-    font-size: medium;
-}
-
-.footer ul li a {
-    text-decoration: none;
-    color: #fff;
-    margin: 50px;
-}
 
 body {
     margin: 0px;

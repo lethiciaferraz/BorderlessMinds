@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORDERLESS MINDS</title>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="./mural.css">
     <script src="../js/funcoes.js"></script>
 
@@ -38,13 +39,19 @@
 
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
-                    <h3>Idiomas</h3>
+                    <h3>Idiomas dos usuarios</h3>
+                </a>
+            </div>
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Seu idioma</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
-                <a href="./cartas.html"></a>
+                <a href="./cartas.html">
                 <h3>Cartas</h3>
+            </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -59,7 +66,7 @@
                 <div class="container">
                     <h1>Publicar um post</h1>
                     <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <div id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
                                 Título:
                                 <br>
@@ -72,13 +79,8 @@
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
-                            <label>
-                                Comentário: (máximo de 150 caracteres):
-                                <br>
-                                <textarea name="comentario" id="textarea_comentario" maxlength="150" rows="2"></textarea>
-                            </label>
                             <button>Enviar</button>
-                        </form>
+                        </div>
                     </div>
                     <h1>Mural de publicações</h1>
                     <div class="div-results">
@@ -88,28 +90,8 @@
                 </div>
             </div>
 
-
-
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
-
         </div>
     </div>
-
-
-
 
 </body>
 
@@ -128,7 +110,8 @@
 
         var corpo = {
             titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
+            descricao: form_postagem.descricao.value,
+
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
@@ -266,7 +249,7 @@
     }
 
     function testar() {
-        aguardar();
+       // aguardar();
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
 
