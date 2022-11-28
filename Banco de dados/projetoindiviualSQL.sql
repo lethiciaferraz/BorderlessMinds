@@ -5,7 +5,7 @@ use BorderlessMinds;
 create table usuario (
 idusuario int primary key auto_increment,
 nome varchar (250),
-pais varchar (45),
+nacionalidade varchar (45),
 email varchar (45),
 constraint chktipo check (email like "@"), 
 senha varchar (45));
@@ -28,4 +28,6 @@ fkidioma int,
 foreign key (fkidioma) references idioma(idIdioma),
 fkusuario int,
 foreign key (fkusuario) references usuario(idusuario));
+
+select * from usuario;
 

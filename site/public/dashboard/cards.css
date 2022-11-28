@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+/* pagina mural */
+
+*,
+body {
+    font-family: Poppins;
+}
+
+.avisoCaptura {
+    display: flex;
+    justify-content: center;
+}
+
+/* MENU LATERAL */
+
+.janela {
+    display: flex;
+    width: 100vw;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: #161618;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid #000000;
+    background-color: #C1D5AD;
+    border: 3px solid rgb(8, 4, 5);
+}
+
+.dash-right {
+    display: flex;
+    width: 75%;
+    height: fit-content;
+    background-color: #161618;
+    position: relative;
+    top: 0;
+    left: 25%;
+}
+
+.header-left h1 {
+    color: #000000;
+    font-weight: 300;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hello h3 {
+    color: #0f0c08;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+    width: 40%;
+    color: #C1D5AD;
+    background-color: #000000;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav-white {
+    width: 40%;
+    background-color: rgb(1, 0, 0);
+    border: 3px solid #C1D5AD;
+    border-radius: 30px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav-white h3 {
+    color: #e6e6e6;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-logout {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #000;
+    color: #C1D5AD;
+    border-radius: 30px;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+
+.container1 {
+    display: flex;
+    margin-top: 15vh;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgb(9, 7, 7);
+    gap: 10vh;
+
+
+}
+
+.idiomas {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #EEE9E4;
+    border-radius: 50px;
+    box-shadow: 3px 4px;
+    height: 400px;
+    position: relative;
+    border: #000;
+    right: 44vh;
+}
+
+.idiomas button {
+    width: 150px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    transition: .2s ease;
+    position: absolute;
+    bottom: 60px;
+}
+
+.idiomas button:hover {
+    cursor: pointer;
+    background: #7ea94d;
+}

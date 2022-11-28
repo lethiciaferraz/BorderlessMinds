@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,7 @@
             <h1>BORDERLESS MINDS</h1>
 
             <div class="hello">
-                <h3>Olá,<span id="b_usuario">usuário!</span></h3>
+                <h3>Olá, <span id="b_usuario">usuário!</span></h3>
             </div>
 
             <div class="btn-nav-white">
@@ -43,15 +42,15 @@
                 </a>
             </div>
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
+                <a href="./cards.html">
                     <h3>Seu idioma</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
                 <a href="./cartas.html">
-                <h3>Cartas</h3>
-            </a>
+                    <h3>Cartas</h3>
+                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -61,7 +60,6 @@
         </div>
 
         <div class="dash-right">
-
             <div class="post">
                 <div class="container">
                     <h1>Publicar um post</h1>
@@ -98,7 +96,7 @@
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
@@ -249,7 +247,7 @@
     }
 
     function testar() {
-       // aguardar();
+        // aguardar();
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
 

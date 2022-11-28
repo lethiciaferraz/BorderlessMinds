@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <title>Borderless Minds | Idiomas dos usuarios</title>
-    <link rel="stylesheet" href="mural.css">
+    <link rel="stylesheet" href="cards.css">
+
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,164 +23,168 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload=" atualizarFeed()">
-    <div class="janela">
+<body onload="iniciar()" style="background-color: #C1D5AD;>
 
+   <div class="janela">
+    <div class="header-left">
 
-        <div class="header-left">
+        <h1>BORDERLESS MINDS</h1>
 
-            <h1>BORDERLESS MINDS</h1>
-
-            <div class="hello">
-                <h3>Olá,<span id="b_usuario">usuário!</span></h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="mural.html">
-                    <h3>Mural</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Idiomas dos usuarios</h3>
-                </a>
-            </div>
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Seu idioma</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <a href="./cartas.html"></a>
-                <h3>Cartas</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário!</span></h3>
         </div>
 
+        <div class="btn-nav-white">
+            <a href="mural.html">
+                <h3>Mural</h3>
+            </a>
+        </div>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
+        <div class="btn-nav-white">
+            <a href="./dashboard.html">
+                <h3>Idiomas dos usuarios</h3>
+            </a>
+        </div>
+        <div class="btn-nav-white">
+            <a href="./cards.html">
+                <h3>Seu idioma</h3>
+            </a>
+        </div>
 
-    <div class="votacao">
-        <select name="" id="">
-            <option value="1">Inglês</option>
-            <option value="2">Coreano</option>
-            <option value="3">Espanhol</option>
-            <option value="4">Alemão</option>
-            <option value="5">Francês</option>
-        </select>
-        <button onclick="escolher()">Escolha os idiomas </button>
+        <div class="btn-nav">
+            <a href="./cartas.html">
+                <h3>Cartas</h3>
+            </a>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+
     </div>
-    
+
+
+    <div class="container1">
+        <div class="idiomas">
+            <h2>Nos conte os idiomas que você fala!</h2><br><br>
+            <div id="div_imagem"> <img src="../assets/idiomas/earth.png" id="img_idiomas" style="height: 150px;">
+            </div>
+            <br>
+            <select id="sel_idiomas" onchange="ver()">
+                <option value="">--Selecione um idioma-- </option>
+                <option value="1"> Inglês</option>
+                <option value="2"> Português</option>
+                <option value="3"> Espanhol</option>
+                <option value="4">Francês</option>
+                <option value="5"> Coreano</option>
+                <option value="6">Alemão</option>
+                <option value="7">Italiano</option>
+            </select>
+            <br>
+            <button onclick="cadastrar()">Registrar idioma</button>
+        </div>
+    </div>
+</div>
 
 </body>
 
+</html>
 <script>
-    idiomas = {
-        nome:
+    b_usuario.innerHTML= sessionStorage.NOME_USUARIO
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
+    function inciar() {
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+        atualizarfeed();
+        validarSessao();
+        atualizacaoPeriodica()
+    }
+    var img = [
+        "../assets/idiomas/earth.png",
+        "../assets/idiomas/united-states.png",
+        "../assets/idiomas/brazil-.png",
+        "../assets/idiomas/spain.png",
+        "../assets/idiomas/france.png",
+        "../assets/idiomas/south-korea.png",
+        "../assets/idiomas/germany.png",
+        "../assets/idiomas/italy.png",
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
+    ]
+    var idiomas = [0, 1, 2, 3, 4, 5, 6, 7]
+
+    var resultado = 0
+
+    function ver() {
+
+
+        var sel = sel_idiomas.value
+
+        for (var contador = 0; contador <= idiomas.length; contador++) {
+            var atual = idiomas.indexOf(contador)
+
+            if (atual == sel) {
+                div_imagem.innerHTML = `<img src="${img[contador]}" style="height: 150px;alt="">`
+                resultado = sel
+            }
+        }
     }
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
+    function cadastrar() {
+        // aguardar();
 
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
+        var selVar = resultado
 
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        if (selVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
+            // finalizarAguardar
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
 
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
+        // Enviando o valor da nova input
+        fetch("/votacao/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                SelServer: selVar,
+                idusuario: sessionStorage.ID_USUARIO
 
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
             })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
+        }).then(function (resposta) {
 
+            console.log("resposta: resposta");
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
     }
 
-    function alertar(temperatura, idAquario) {
-        var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
-        };
-
-        var classe_temperatura = 'cor-alerta';
-
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'cor-alerta ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
-            console.log("caiu no 5")
-        }
-
-        var card;
-
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
-            card = card_4
-        }
-
-        // alterando
-        card.className = classe_temperatura;
-
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
 </script>
-
-</html>
