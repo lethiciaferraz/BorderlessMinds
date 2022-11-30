@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORDERLESS MINDS</title>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <title>Mural</title>
+    <link rel="shortcut icon" href="../assets/maple-leaf (2).png" type="image/x-icon">
     <link rel="stylesheet" href="./mural.css">
     <script src="../js/funcoes.js"></script>
 
@@ -74,10 +74,10 @@
                             <label>
                                 Descrição (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="20" rows="5"></textarea>
                             </label>
                             <br>
-                            <button>Enviar</button>
+                            <button onclick="publicar()">Enviar</button>
                         </div>
                     </div>
                     <h1>Mural de publicações</h1>
@@ -107,8 +107,8 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value,
+            titulo: titulo.value,
+            descricao: textarea_descricao.value,
 
         }
 

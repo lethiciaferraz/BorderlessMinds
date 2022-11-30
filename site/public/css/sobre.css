@@ -76,33 +76,40 @@ ul li {
 
 .container1 {
     display: flex;
-    margin-top: 0px;
-    padding: 105px;
-    color: #000;
-    justify-content: flex-start;
-    height: 180vh;
-    width: 1400px;
+    flex-direction:row;
+    align-items: flex-start;
+    padding:50px;
+    margin: 10px;
+    justify-content: space-evenly;
+
 
 }
 
+
 .titulo1 {
-    margin-top: 90px;
-    padding: 60px;
-    width: 600px;
-    height: 100px;
+    margin-top: 30px;
+    width: 300px;
+    height: 420px;
 }
 
 #fig1 {
     background-image: url('../assets/torontinho2.png');
     background-repeat: no-repeat;
-    width: 90px;
 
 }
 
 #fig1:hover {
     background-image: url('../assets/torontinho1.png');
-    width: 90px;
+    
 
+
+}
+
+.titulo2 {
+    margin-top: 30px;
+    padding: 60px;
+    width: 100px;
+    height: 320px;
 }
 
 #fig2 {
@@ -114,13 +121,6 @@ ul li {
     background-image: url('../assets/Rectangle\ 180.png');
 }
 
-.container1 p {
-    margin-top: 70px;
-    font-size: 20px;
-    text-align: center;
-    margin-right: 90px;
-
-}
 
 .container1 ul {
     padding: 120px;

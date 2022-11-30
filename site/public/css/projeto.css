@@ -201,6 +201,8 @@ body {
 
 .curiosidades .container2 .boxes1 {
     display: flex;
+    padding: 1rem 2rem;
+
 }
 
 .texto {

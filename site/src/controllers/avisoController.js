@@ -94,9 +94,10 @@ function publicar(req, res) {
 }
 
 function editar(req, res) {
-    var idAviso = req.params.idAviso;
+    var idAviso = req.body.idAvisoServer;
+    var descricao = req.body.descricaoServer;
 
-    avisoModel.editar( idAviso)
+    avisoModel.editar(descricao, idAviso)
         .then(
             function (resultado) {
                 res.json(resultado);

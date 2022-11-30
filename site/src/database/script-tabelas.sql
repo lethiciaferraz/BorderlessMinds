@@ -6,16 +6,18 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
+create database BorderlessMinds;
 
-USE aquatech;
+use BorderlessMinds;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
-);
+create table usuario (
+idusuario int primary key auto_increment,
+nome varchar (250),
+nacionalidade varchar (45),
+email varchar (45),
+constraint chktipo check (email like "%@%"), 
+senha varchar (45));
+
 
 CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
