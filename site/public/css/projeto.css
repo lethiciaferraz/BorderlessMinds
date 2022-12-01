@@ -49,6 +49,11 @@ ul a {
     color: black;
 }
 
+ul a:nth-child(2){
+    text-decoration: underline;
+    }
+    
+
 ul a:hover {
     color: #5eb611;
 }

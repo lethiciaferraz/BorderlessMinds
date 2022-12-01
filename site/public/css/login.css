@@ -78,6 +78,11 @@
     transition: .2s ease;
 }
 
+.centralizar-botao {
+    justify-content: center;
+
+    display: flex;
+}
 .caixa-formulario button:hover {
     cursor: pointer;
     background: #7ea94d;

@@ -19,17 +19,27 @@
 
 <body>
     <header>
-        
+
         <div class="logo">
             <img src="assets/Group 1.png" alt="">
         </div>
         <nav>
             <ul>
-                <a href="index.html"><li>HOME</li></a>
-                <a href="projeto.html"><li>PROJETO</li></a>
-                <a href="sobre.html"><li>SOBRE</li></a>
-                <a href="cadastro.html"><li class="bnt-nav c">CADASTRO</li></a>
-                <a href="login.html"> <li class="bnt-nav">LOGIN</li></a>
+                <a href="index.html">
+                    <li>HOME</li>
+                </a>
+                <a href="projeto.html">
+                    <li>PROJETO</li>
+                </a>
+                <a href="sobre.html">
+                    <li>SOBRE</li>
+                </a>
+                <a href="cadastro.html">
+                    <li class="bnt-nav c">CADASTRO</li>
+                </a>
+                <a href="login.html">
+                    <li class="bnt-nav">LOGIN</li>
+                </a>
             </ul>
         </nav>
     </header>
@@ -40,37 +50,39 @@
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
-        <div class="container1">
+            <div class="container1">
                 <div class="caixa-formulario">
                     <h1>Seja bem-vindo!!</h1>
                     <div class="campo">
                         <label for="email">E-mail:</label>
                         <input type="email" id="in_email" placeholder="email@gmail.com">
-                </div>
+                    </div>
 
-                <div class="campo">
-                    <label for="password">Senha:</label>
-                    <input type="password" id="in_senha" placeholder="**********">
-                </div>
-                <div id="div_exibir"></div>
-                <button onclick="entrar()">LOGIN</button>
-                <div id="div_erros_login">
-            </div> <br>
-            <div id="div_aguardar" class="loading-div">
-            </div>
+                    <div class="campo">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="in_senha" placeholder="**********">
+                    </div>
+                    <div id="div_exibir"></div>
 
+                    <div class="centralizar-botao">
+                        <button onclick="entrar()">LOGIN</button>
+                    </div>
+                    
+                    <div id="div_erros_login">
+                    </div> <br>
+                    <div id="div_aguardar" class="loading-div">
+                    </div>
+
+                </div>
             </div>
         </div>
-</div>
 
 
-    <!--Footer-->
-    <div class="footer">
-        <ul>
-            <li><b><a href="contato.html">Contato</a></b></li>
-        </ul>
-        Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido com amor por Lethícia Ferraz.
-    </div>
+        <!--Footer-->
+        <div class="footer">
+            
+            Borderless Minds - copyright 2022. Todos os direitos reservados. Desenvolvido com amor por Lethícia Ferraz.
+        </div>
 </body>
 
 </html>

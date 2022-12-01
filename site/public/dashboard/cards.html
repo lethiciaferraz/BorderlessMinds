@@ -23,12 +23,13 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="iniciar()" style="background-color: #C1D5AD;>
+<body style="background-color: #C1D5AD;>
 
    <div class="janela">
     <div class="header-left">
 
         <h1>BORDERLESS MINDS</h1>
+        <img src="../assets/maple-leaf (2).png" width="100px" alt="">
 
         <div class="hello">
             <h3>Olá, <span id="b_usuario">usuário!</span></h3>
@@ -51,7 +52,7 @@
             </a>
         </div>
 
-        <div class="btn-nav">
+        <div class="btn-nav-white">
             <a href="./cartas.html">
                 <h3>Cartas</h3>
             </a>
@@ -84,19 +85,20 @@
             <button onclick="cadastrar()">Registrar idioma</button>
         </div>
     </div>
-</div>
+    </div>
 
 </body>
 
 </html>
 <script>
-    b_usuario.innerHTML= sessionStorage.NOME_USUARIO
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+    window.onload = inciar()
 
     function inciar() {
 
-        atualizarfeed();
         validarSessao();
-        atualizacaoPeriodica()
+        VerificarVotacao();
     }
     var img = [
         "../assets/idiomas/earth.png",
@@ -113,10 +115,20 @@
 
     var resultado = 0
 
+    var nome = [0, 'Inglês', 'Português', 'Espanhol', 'Francês', 'Coreano', 'Alemão', 'Italiano']
+
+    var i = 0
+
+    var verificacao = []
+
     function ver() {
 
 
         var sel = sel_idiomas.value
+
+
+
+
 
         for (var contador = 0; contador <= idiomas.length; contador++) {
             var atual = idiomas.indexOf(contador)
@@ -124,67 +136,97 @@
             if (atual == sel) {
                 div_imagem.innerHTML = `<img src="${img[contador]}" style="height: 150px;alt="">`
                 resultado = sel
+                i = contador
             }
         }
     }
 
     function cadastrar() {
         // aguardar();
-
         var selVar = resultado
+
+
 
         if (selVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-            // finalizarAguardar
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        } else {
 
-        // Enviando o valor da nova input
-        fetch("/votacao/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                SelServer: selVar,
-                idusuario: sessionStorage.ID_USUARIO
+            for (let index = 0; index < verificacao.length; index++) {
+                const verificacaoAtual = verificacao[index];
 
-            })
-        }).then(function (resposta) {
+                if (selVar == verificacaoAtual) {
+                    alert(`Você já cadastrou esse idioma!`)
+                    return false;
+                }
+            }
 
-            console.log("resposta: resposta");
 
-            if (resposta.ok) {
-                cardErro.style.display = "block";
+            // else {
+            //     setInterval(sumirMensagem, 5000)
+            // }
 
-                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+            // Enviando o valor da nova input
+            fetch("/votacao/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    SelServer: selVar,
+                    idusuario: sessionStorage.ID_USUARIO
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: resposta");
+
+
+                alert(`Parabéns! Você registrou o ${nome[i]}`)
 
                 setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                    window.location = "cards.html";
+                }, "500")
 
-                limparFormulario();
+
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
                 // finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
+            });
 
-        return false;
+            return false;
+        }
     }
 
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+    function VerificarVotacao() {
 
+        var fkusuario = sessionStorage.ID_USUARIO
+
+        fetch(`/votacao/VerificarVotacao/${fkusuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    for (let index = 0; index < resposta.length; index++) {
+                        const idiomaAtual = resposta[index];
+
+                        verificacao.push(idiomaAtual.fkidioma)
+
+                    }
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 </script>

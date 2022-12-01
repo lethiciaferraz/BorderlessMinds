@@ -6,6 +6,10 @@ router.get("/ultimas/", function (req, res) {
     votacaoController.buscarUltimasMedidas(req, res);
 });
 
+router.get("/VerificarVotacao/:fkusuario", function (req, res) {
+    votacaoController.VerificarVotacao(req, res);
+});
+
 var votacaoController = require("../controllers/votacaoController");
 
 //Recebendo os dados do html e direcionando para a função cadastrar de votacaoController.js
