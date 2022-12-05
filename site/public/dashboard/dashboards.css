@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+body {
+    font-family: Poppins;
+    background-color: #C1D5AD;
+    
+}
+
+body::-webkit-scrollbar {
+    width: 1vh;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #C1D5AD
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 2vh;
+}
+
+.html {
+    scroll-behavior: smooth;
+}
 
 /* pagina mural */
 
